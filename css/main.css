@@ -11,6 +11,10 @@ body {
   margin: 0 auto;
 }
 
+section {
+  padding-top: 90px;
+}
+
 /* Header */
 
 .header {
@@ -91,13 +95,10 @@ body {
   margin-top: 76px;
 }
 
-section {
-  padding-top: 90px;
-}
-
 .list-item {
   display: flex;
   justify-content: center;
+  padding-bottom: 90px;
 }
 
 .item {
@@ -121,4 +122,23 @@ section {
   font-weight: 400;
   font-size: 14px;
   line-height: 28px;
+}
+/* Section portfolio */
+
+.portfolio {
+  background-color: rgba(241, 241, 241, 1);
+  max-width: 100%;
+  padding-top: 90px;
+}
+
+.title-potfolio {
+  text-align: center;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 51px;
+  padding-bottom: 90px;
+}
+
+.img-portfolio {
+  margin: 0 auto;
 }
