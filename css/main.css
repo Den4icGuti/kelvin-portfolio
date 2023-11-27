@@ -41,6 +41,7 @@ body {
 
 .list {
   display: flex;
+  justify-content: space-between;
 }
 .nav-list {
   margin-left: 50px;
@@ -55,4 +56,69 @@ body {
   font-size: 14px;
   line-height: 21px;
   color: rgba(0, 0, 0, 1);
+}
+
+.hero {
+  background-color: rgba(241, 241, 241, 1);
+  display: flex;
+}
+
+.hero-title {
+  width: 482px;
+  padding-top: 200px;
+  padding-left: 215px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 66px;
+}
+
+.desc-hero {
+  padding-top: 20px;
+  width: 482px;
+}
+
+.inner-desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.hero-img {
+  margin-left: 176px;
+  margin-top: 76px;
+}
+
+section {
+  padding-top: 90px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  margin-left: 30px;
+}
+
+.item:first-child {
+  margin-left: 0px;
+}
+
+.service-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  margin-top: 30px;
+}
+
+.desc-service {
+  margin-top: 10px;
+  width: 370px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
 }
