@@ -1,11 +1,11 @@
-// const refs = {
-//   burgerPortfolio: document.querySelector(".js-portfolio-burger"),
-// };
+const refs = {
+  footerBtn: document.querySelector(".js-footer-btn"),
+};
 
-// const { burgerPortfolio } = refs;
+const { footerBtn } = refs;
 
-// const openBurgerMenu = () => {
-//   console.log("Open menu");
-// };
+const openModalMessage = () => {
+  console.log("open modal");
+};
 
-// burgerPortfolio.addEventListener("click", openBurgerMenu);
+footerBtn.addEventListener("click", openModalMessage);
