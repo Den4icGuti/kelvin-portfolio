@@ -357,8 +357,105 @@ section {
   color: rgba(130, 130, 130, 1);
 }
 
-/* .modal-message {
-  width: 100vh;
-  background-color: #6f697c;
-  transition: ;
-} */
+.wrapper-modal {
+  opacity: 1;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  -webkit-transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+.show-modal-msg {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(53, 66, 103, 0.0001)),
+    color-stop(99.04%, #151824)
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(53, 66, 103, 0.0001) 0%,
+    #151824 95.04%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(53, 66, 103, 0.0001) 0%,
+    #151824 95.04%
+  );
+  z-index: 44;
+}
+
+.msg-form {
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 25px;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
+  -o-transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-form {
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.email-input {
+  border-bottom: solid 1px black;
+  background-color: transparent;
+  padding: 0 0 10px 0;
+  width: 100%;
+  border: solid 1px black;
+}
+
+.text-msg {
+  resize: none;
+  width: 100%;
+  padding: 4px;
+  color: #0c0b0c;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+
+  border: solid 1px black;
+}
+
+label {
+  padding: 5px 0 5px 0;
+}
+
+.btn-msg {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  width: 50px;
+  background-color: #303858;
+  color: #fff;
+  margin-top: 15px;
+}
