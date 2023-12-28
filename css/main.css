@@ -20,8 +20,6 @@ section {
 .header {
   background-color: rgba(241, 241, 241, 1);
   padding-top: 46px;
-  display: flex;
-  justify-content: space-between;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -30,20 +28,26 @@ section {
 .logo {
   color: rgba(0, 0, 0, 1);
   font-weight: 700;
-  size: 32px;
+  font-size: 32px;
   line-height: 32px;
   margin-left: 215px;
-  position: relative;
 }
 
-.ellipse {
+.logo::after {
+  content: "";
   width: 8px;
   height: 8px;
+  background: rgba(253, 163, 0, 1);
   border-radius: 50%;
-  background-color: rgba(253, 163, 0, 1);
   position: absolute;
+  top: 73px;
   margin-left: 4px;
-  top: 60%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .list {
@@ -368,10 +372,8 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
   -webkit-transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-  -o-transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  transition: opacity 200ms, ease-in-out, visibility 200ms, ease-in-out;
 }
 
 .show-modal-msg {
@@ -395,7 +397,9 @@ section {
     rgba(53, 66, 103, 0.0001) 0%,
     #151824 95.04%
   );
-  z-index: 44;
+  transform: scale(1.1);
+  transition: transform 200ms, ease-in-out all;
+  z-index: 20;
 }
 
 .msg-form {
@@ -413,7 +417,7 @@ section {
   transition: transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
 
-  z-index: 50;
+  z-index: 45;
   display: flex;
   flex-wrap: wrap;
 }
@@ -429,21 +433,21 @@ section {
 .email-input {
   border-bottom: solid 1px black;
   background-color: transparent;
-  padding: 0 0 10px 0;
+  /* padding: 0 0 10px 0; */
   width: 100%;
-  border: solid 1px black;
+  border-bottom: solid 1px black;
 }
 
 .text-msg {
   resize: none;
   width: 100%;
-  padding: 4px;
+  /* padding: 4px; */
   color: #0c0b0c;
   font-size: 15px;
   font-weight: 500;
   line-height: 15px;
 
-  border: solid 1px black;
+  border-bottom: solid 1px black;
 }
 
 label {
