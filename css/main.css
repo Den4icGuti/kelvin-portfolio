@@ -119,6 +119,7 @@ section {
 .header-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   column-gap: 30px;
 }
@@ -153,6 +154,7 @@ section {
 
 .service-row {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 30px;
 }
 
@@ -205,6 +207,7 @@ section {
 .project-title {
   font-weight: 400;
   font-size: 18px;
+  display: block;
 }
 
 .project-title a {
@@ -270,3 +273,79 @@ section {
   margin-top: 41px;
 }
 /* Section footer end*/
+
+/* Form style start */
+.form-group {
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+.show-form {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  background: linear-gradient(
+    180deg,
+    rgba(53, 66, 103, 0.0001) 0%,
+    #151824 107.04%
+  );
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  z-index: 20;
+}
+
+.form {
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.title-form {
+  text-align: center;
+  margin-top: 15px;
+}
+
+label {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  border-bottom: solid 1px black;
+  padding-left: 10px;
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px black;
+}
+
+.btn-submit {
+  width: 160px;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  transition: 0.2s all;
+}
+
+.btn-submit:hover {
+  background-color: #000;
+  color: #f1f1f1;
+}
+/* Form style end */

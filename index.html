@@ -14,7 +14,7 @@
         <!--Header nav start-->
         <div class="header-nav">
           <a href="!#" class="logo">Kelvin</a>
-          <nav class="nav">
+          <nav class="nav js-nav">
             <ul class="nav-list">
               <li class="nav-item">
                 <a href="!#" class="nav-link">Home</a>
@@ -32,13 +32,12 @@
                 <a href="!#" class="nav-link">Contact</a>
               </li>
             </ul>
-            <div class="header__nav-close">
+            <div class="header__nav-close js-close-nav-menu">
               <span class="header__nav-close-line"></span>
               <span class="header__nav-close-line"></span>
-              <span></span>
             </div>
           </nav>
-          <div class="header__burger burger">
+          <div class="header__burger js-burger">
             <span class="burger__line burger__line_first"></span>
             <span class="burger__line burger__line_second"></span>
             <span class="burger__line burger__line__third"></span>
@@ -65,7 +64,7 @@
 
     <!--Services section start-->
 
-    <!-- <section class="services">
+    <section class="services">
       <div class="container">
         <div class="service-row">
           <div class="service-card">
@@ -106,12 +105,12 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
     <!--Services section end-->
 
     <!--Services portfolio start-->
 
-    <!-- <section class="portfolio">
+    <section class="portfolio">
       <div class="container">
         <div class="portfolio-title">
           <h2 class="title-1">Portfolio</h2>
@@ -147,10 +146,10 @@
           </h3>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!--Footer section start-->
-    <!-- <footer class="contacts-wrapper">
+    <footer class="contacts-wrapper">
       <div class="container">
         <div class="contacts-content">
           <h2 class="title-1">Contacts</h2>
@@ -179,8 +178,20 @@ LinkedIn, Instagram, Behance, Dribble
           </p>
         </div>
       </div>
-    </footer> -->
+    </footer>
+   
     <!--Footer section end-->
+     <div class="form-group js-form-group">
+      <form class="form">
+        <h3 class="title-form">Send message</h3>
+        <label >Email</label>
+        <input type="email" name="email" placeholder="Email">
+        <label>Message</label>
+        <textarea name="text" autofocus></textarea>
+        
+        <button type="submit" class="btn-submit js-submit">Send</button>
+      </form>
+     </div>
     <script src="./js/index.js"></script>
   </body>
 </html>
