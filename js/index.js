@@ -1,12 +1,17 @@
+import Notiflix from "notiflix";
+
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
   navMenu: document.querySelector(".js-nav"),
   closeMenu: document.querySelector(".js-close-nav-menu"),
   openForm: document.querySelector(".js-message"),
   formGroup: document.querySelector(".js-form-group"),
+  form: document.querySelector(".js-form"),
 };
 
-const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup } = refs;
+const data = [];
+
+const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
 const onOpenBurgerMenu = () => {
   navMenu.classList.add("open-menu");
@@ -45,3 +50,27 @@ function onPressEscape(e) {
 }
 
 formGroup.addEventListener("click", onBackdropClick);
+
+function onFormSubmit(e) {
+  e.preventDefault();
+  const email = e.currentTarget.email.value;
+  const text = e.currentTarget.text.value;
+  if (email === "") {
+    return Notiflix.Notify.warning("Поле Email должно быть заполнено");
+  }
+
+  const newData = {
+    email,
+    text,
+  };
+  Notiflix.Notify.success("Спасибо за ваш отзыв :)");
+  data.push(newData);
+  const dataJson = JSON.stringify(data);
+  console.log(dataJson);
+
+  form.reset();
+  onCloseForm();
+  return localStorage.setItem("data", dataJson);
+}
+
+form.addEventListener("submit", onFormSubmit);
