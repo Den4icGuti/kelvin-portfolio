@@ -1,14 +1,23 @@
 {
   "name": "layout",
   "version": "1.0.0",
-  "description": "",
+  "description": "layout",
   "main": "index.js",
+  "type": "module",
+  "homepage": "den4icguti.github.io/my-portfolio-layout/",
   "scripts": {
     "start": "parcel *.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/Den4icGuti/my-portfolio-layout.git"
   },
   "keywords": [],
   "author": "Denis Gutin <goos7412@gmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den4icGuti/my-portfolio-layout/issues"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
   },

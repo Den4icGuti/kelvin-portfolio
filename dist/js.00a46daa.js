@@ -175,8 +175,9 @@ function onFormSubmit(e) {
   e.preventDefault();
   var email = e.currentTarget.email.value;
   var text = e.currentTarget.text.value;
-  if (email === "") {
-    return _notiflix.default.Notify.warning("Поле Email должно быть заполнено");
+  if (email === "" || text === "") {
+    _notiflix.default.Notify.warning("Поля должны быть заполнены");
+    return;
   }
   var newData = {
     email: email,
@@ -216,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59308" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49286" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
