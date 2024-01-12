@@ -56,8 +56,7 @@ function onFormSubmit(e) {
   const email = e.currentTarget.email.value;
   const text = e.currentTarget.text.value;
   if (email === "" || text === "") {
-    Notiflix.Notify.warning("Поля должны быть заполнены");
-    return;
+    alert("Все поля должны быть заполнены!");
   }
 
   const newData = {
