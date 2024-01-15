@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "den4icguti.github.io/git-travel-project/my-portfolio-layout.git/",
+  "homepage": "https://github.com/Den4icGuti/my-portfolio-layout",
   "scripts": {
     "start": "parcel index.html"
   },
