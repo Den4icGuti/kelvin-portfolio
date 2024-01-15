@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/Den4icGuti/my-portfolio-layout",
   "scripts": {
     "start": "parcel index.html"
   },
