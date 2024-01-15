@@ -1,5 +1,4 @@
-import Notiflix from "notiflix";
+const email = e.currentTarget.email.value;
+const text = e.currentTarget.text.value;
 
-export const errorMessage = Notiflix.Notify.warning(
-  "Поле Email должно быть заполнено"
-);
+export { email, text };

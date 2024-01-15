@@ -1,5 +1,3 @@
-import Notiflix from "notiflix";
-
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
   navMenu: document.querySelector(".js-nav"),
@@ -55,21 +53,25 @@ function onFormSubmit(e) {
   e.preventDefault();
   const email = e.currentTarget.email.value;
   const text = e.currentTarget.text.value;
+
   if (email === "" || text === "") {
     alert("Все поля должны быть заполнены!");
+    return;
   }
 
   const newData = {
     email,
     text,
   };
-  Notiflix.Notify.success("Спасибо за ваш отзыв :)");
+
   data.push(newData);
+  console.log(data);
   const dataJson = JSON.stringify(data);
   console.log(dataJson);
 
   form.reset();
   onCloseForm();
+
   return localStorage.setItem("data", dataJson);
 }
 
