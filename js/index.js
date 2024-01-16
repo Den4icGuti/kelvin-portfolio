@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
   navMenu: document.querySelector(".js-nav"),
@@ -8,6 +10,8 @@ const refs = {
 };
 
 const data = [];
+
+const id = nanoid(4);
 
 const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
@@ -60,6 +64,7 @@ function onFormSubmit(e) {
   }
 
   const newData = {
+    id,
     email,
     text,
   };
