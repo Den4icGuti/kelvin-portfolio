@@ -1,5 +1,4 @@
-import { nanoid } from "nanoid";
-
+import not from "./services";
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
   navMenu: document.querySelector(".js-nav"),
@@ -10,8 +9,6 @@ const refs = {
 };
 
 const data = [];
-
-const id = nanoid(4);
 
 const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
@@ -55,16 +52,15 @@ formGroup.addEventListener("click", onBackdropClick);
 
 function onFormSubmit(e) {
   e.preventDefault();
+
   const email = e.currentTarget.email.value;
   const text = e.currentTarget.text.value;
 
   if (email === "" || text === "") {
-    alert("Все поля должны быть заполнены!");
-    return;
+    return not.warning("Все поля должны быть заполнены!");
   }
 
   const newData = {
-    id,
     email,
     text,
   };

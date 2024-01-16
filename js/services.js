@@ -1,4 +1,5 @@
-const email = e.currentTarget.email.value;
-const text = e.currentTarget.text.value;
+import { Notify } from "notiflix";
 
-export { email, text };
+const not = Notify;
+
+export default not;
