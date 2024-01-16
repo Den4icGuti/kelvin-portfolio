@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid";
+import { nanoid } from "../package.json/nanoid";
 
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
