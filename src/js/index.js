@@ -1,3 +1,5 @@
+import { warningNotifaction, successNotifaction, generaiteId } from "./service";
+
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
   navMenu: document.querySelector(".js-nav"),
@@ -8,6 +10,8 @@ const refs = {
 };
 
 const data = [];
+
+const id = generaiteId(4);
 
 const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
@@ -56,7 +60,8 @@ function onFormSubmit(e) {
   const text = e.currentTarget.text.value;
 
   if (email === "" || text === "") {
-    return not.warning("Все поля должны быть заполнены!");
+    warningNotifaction();
+    return;
   }
 
   const newData = {
@@ -64,7 +69,7 @@ function onFormSubmit(e) {
     email,
     text,
   };
-
+  successNotifaction();
   data.push(newData);
   console.log(data);
   const dataJson = JSON.stringify(data);
@@ -78,6 +83,6 @@ function onFormSubmit(e) {
 
 form.addEventListener("submit", onFormSubmit);
 
-const name = "Den"
+const name = "Den";
 
 console.log("Hello" + name);
