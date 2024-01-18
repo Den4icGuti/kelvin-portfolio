@@ -58,7 +58,7 @@ function onFormSubmit(e) {
   const text = e.currentTarget.text.value;
 
   if (email === "" || text === "") {
-    warningNotifaction();
+    // warningNotifaction();
     return;
   }
 
@@ -66,7 +66,7 @@ function onFormSubmit(e) {
     email,
     text,
   };
-  successNotifaction();
+  // successNotifaction();
 
   data.push(newData);
   console.log(data);
