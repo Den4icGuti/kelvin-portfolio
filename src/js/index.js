@@ -1,4 +1,4 @@
-// import { warningNotifaction, successNotifaction } from "./service";
+import { notifactionWarning, notifactionSuccess } from "./service";
 
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
@@ -58,16 +58,14 @@ function onFormSubmit(e) {
   const text = e.currentTarget.text.value;
 
   if (email === "" || text === "") {
-    // warningNotifaction();
-    return;
+    return notifactionWarning();
   }
 
   const newData = {
     email,
     text,
   };
-  // successNotifaction();
-
+  notifactionSuccess();
   data.push(newData);
   console.log(data);
 
