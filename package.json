@@ -1,0 +1,26 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "layout",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den4icGuti/kelvin-portfolio.git"
+  },
+  "author": "Denis Gutin <goos7412@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den4icGuti/kelvin-portfolio/issues"
+  },
+  "homepage": "https://github.com/Den4icGuti/kelvin-portfolio#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "notiflix": "^3.2.7"
+  }
+}
