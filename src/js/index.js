@@ -1,4 +1,4 @@
-import { warningNotifaction, successNotifaction, generaiteId } from "./service";
+import { warningNotifaction, successNotifaction } from "./service";
 
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
@@ -10,8 +10,6 @@ const refs = {
 };
 
 const data = [];
-
-const id = generaiteId(4);
 
 const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
@@ -65,13 +63,14 @@ function onFormSubmit(e) {
   }
 
   const newData = {
-    id,
     email,
     text,
   };
   successNotifaction();
+
   data.push(newData);
   console.log(data);
+
   const dataJson = JSON.stringify(data);
   console.log(dataJson);
 
@@ -82,7 +81,3 @@ function onFormSubmit(e) {
 }
 
 form.addEventListener("submit", onFormSubmit);
-
-const name = "Den";
-
-console.log("Hello" + name);
