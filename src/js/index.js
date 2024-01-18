@@ -1,4 +1,4 @@
-import { warningNotifaction, successNotifaction } from "./service";
+// import { warningNotifaction, successNotifaction } from "./service";
 
 const refs = {
   burgerOpenMenu: document.querySelector(".js-burger"),
