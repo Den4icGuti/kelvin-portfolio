@@ -2,6 +2,7 @@
   "name": "layout",
   "version": "1.0.0",
   "description": "layout",
+  "type": "module",
   "main": "index.js",
   "homepage": "https://github.io/Den4icGuti/kelvin-portfolio/",
   "scripts": {
