@@ -1,15 +1,19 @@
 {
   "name": "layout",
   "version": "1.0.0",
-  "description": "layout",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "origin https://github.com/Den4icGuti/my-portfolio.git"
+    "url": "git+https://github.com/Den4icGuti/kelvin-portfolio.git"
   },
   "author": "Denis Gutin <goos7412@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den4icGuti/kelvin-portfolio/issues"
+  },
+  "homepage": "https://github.com/Den4icGuti/kelvin-portfolio#readme"
 }
