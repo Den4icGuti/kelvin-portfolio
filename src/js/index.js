@@ -1,5 +1,3 @@
-// import { notifactionWarning, notifactionSuccess } from "./service";
-
 const refs = {
   burgerOpenMenu: document.querySelector('.js-burger'),
   navMenu: document.querySelector('.js-nav'),
