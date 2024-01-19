@@ -2,12 +2,11 @@
   "name": "layout",
   "version": "1.0.0",
   "description": "layout",
-  "type": "module",
   "main": "index.js",
   "homepage": "https://github.io/Den4icGuti/kelvin-portfolio/",
   "scripts": {
-    "start": "parcel *.html",
-    "build": "parcel build index.html --public-url /kelvin-portfolio/"
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /kelvin-portfolio/"
   },
   "repository": {
     "type": "git",

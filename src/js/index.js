@@ -1,12 +1,12 @@
-import { notifactionWarning, notifactionSuccess } from "./service";
+// import { notifactionWarning, notifactionSuccess } from "./service";
 
 const refs = {
-  burgerOpenMenu: document.querySelector(".js-burger"),
-  navMenu: document.querySelector(".js-nav"),
-  closeMenu: document.querySelector(".js-close-nav-menu"),
-  openForm: document.querySelector(".js-message"),
-  formGroup: document.querySelector(".js-form-group"),
-  form: document.querySelector(".js-form"),
+  burgerOpenMenu: document.querySelector('.js-burger'),
+  navMenu: document.querySelector('.js-nav'),
+  closeMenu: document.querySelector('.js-close-nav-menu'),
+  openForm: document.querySelector('.js-message'),
+  formGroup: document.querySelector('.js-form-group'),
+  form: document.querySelector('.js-form'),
 };
 
 const data = [];
@@ -14,27 +14,27 @@ const data = [];
 const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
 
 const onOpenBurgerMenu = () => {
-  navMenu.classList.add("open-menu");
+  navMenu.classList.add('open-menu');
 };
 
-burgerOpenMenu.addEventListener("click", onOpenBurgerMenu);
+burgerOpenMenu.addEventListener('click', onOpenBurgerMenu);
 
 const onCloseMenu = () => {
-  navMenu.classList.remove("open-menu");
+  navMenu.classList.remove('open-menu');
 };
 
-closeMenu.addEventListener("click", onCloseMenu);
+closeMenu.addEventListener('click', onCloseMenu);
 
 const onOpenForm = () => {
-  formGroup.classList.add("show-form");
-  window.addEventListener("keydown", onPressEscape);
+  formGroup.classList.add('show-form');
+  window.addEventListener('keydown', onPressEscape);
 };
 
-openForm.addEventListener("click", onOpenForm);
+openForm.addEventListener('click', onOpenForm);
 
 function onCloseForm() {
-  formGroup.classList.remove("show-form");
-  window.removeEventListener("keydown", onPressEscape);
+  formGroup.classList.remove('show-form');
+  window.removeEventListener('keydown', onPressEscape);
 }
 
 function onBackdropClick(e) {
@@ -44,12 +44,12 @@ function onBackdropClick(e) {
 }
 
 function onPressEscape(e) {
-  if (e.key === "Escape") {
+  if (e.key === 'Escape') {
     onCloseForm();
   }
 }
 
-formGroup.addEventListener("click", onBackdropClick);
+formGroup.addEventListener('click', onBackdropClick);
 
 function onFormSubmit(e) {
   e.preventDefault();
@@ -57,15 +57,15 @@ function onFormSubmit(e) {
   const email = e.currentTarget.email.value;
   const text = e.currentTarget.text.value;
 
-  if (email === "" || text === "") {
-    return notifactionWarning();
+  if (email === '' || text === '') {
+    alert('Все поля должны быть заполнены!');
   }
 
   const newData = {
     email,
     text,
   };
-  notifactionSuccess();
+
   data.push(newData);
   console.log(data);
 
@@ -75,7 +75,7 @@ function onFormSubmit(e) {
   form.reset();
   onCloseForm();
 
-  return localStorage.setItem("data", dataJson);
+  return localStorage.setItem('data', dataJson);
 }
 
-form.addEventListener("submit", onFormSubmit);
+form.addEventListener('submit', onFormSubmit);
