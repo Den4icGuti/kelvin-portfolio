@@ -65,6 +65,7 @@ function onFormSubmit(e) {
   };
 
   data.push(newData);
+
   console.log(data);
 
   const dataJson = JSON.stringify(data);
