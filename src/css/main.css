@@ -1,8 +1,8 @@
-@import "./reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Dongle&family=Poppins:wght@400;500;600;700&display=swap");
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000;
 }
 
@@ -40,7 +40,7 @@ section {
 }
 
 .logo::after {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   background: rgba(253, 163, 0, 1);
@@ -295,11 +295,7 @@ section {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  background: linear-gradient(
-    180deg,
-    rgba(53, 66, 103, 0.0001) 0%,
-    #151824 107.04%
-  );
+  background: linear-gradient(180deg, rgba(53, 66, 103, 0.0001) 0%, #151824 107.04%);
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
   z-index: 20;
 }

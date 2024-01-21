@@ -1,3 +1,4 @@
+import { throttle, debounce } from 'throttle-debounce';
 const refs = {
   burgerOpenMenu: document.querySelector('.js-burger'),
   navMenu: document.querySelector('.js-nav'),
@@ -5,11 +6,13 @@ const refs = {
   openForm: document.querySelector('.js-message'),
   formGroup: document.querySelector('.js-form-group'),
   form: document.querySelector('.js-form'),
+  texteria: document.querySelector('.js-texteria'),
 };
 
-const data = [];
+// const data = [];
+populateMessage();
 
-const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form } = refs;
+const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form, texteria } = refs;
 
 const onOpenBurgerMenu = () => {
   navMenu.classList.add('open-menu');
@@ -26,6 +29,7 @@ closeMenu.addEventListener('click', onCloseMenu);
 const onOpenForm = () => {
   formGroup.classList.add('show-form');
   window.addEventListener('keydown', onPressEscape);
+  window.addEventListener('click', onBackdropClick);
 };
 
 openForm.addEventListener('click', onOpenForm);
@@ -47,34 +51,28 @@ function onPressEscape(e) {
   }
 }
 
-formGroup.addEventListener('click', onBackdropClick);
-
 function onFormSubmit(e) {
   e.preventDefault();
 
-  const email = e.currentTarget.email.value;
-  const text = e.currentTarget.text.value;
-
-  if (email === '' || text === '') {
-    alert('Все поля должны быть заполнены!');
-  }
-
-  const newData = {
-    email,
-    text,
-  };
-
-  data.push(newData);
-
-  console.log(data);
-
-  const dataJson = JSON.stringify(data);
-  console.log(dataJson);
-
   form.reset();
-  onCloseForm();
-
-  return localStorage.setItem('data', dataJson);
+  localStorage.removeItem('fdb-message');
 }
+
+function onInputMessage(evt) {
+  const message = evt.currentTarget.value;
+
+  localStorage.setItem('fdb-message', message);
+}
+
+function populateMessage() {
+  const savedMessage = localStorage.getItem('fdb-message');
+
+  if (savedMessage) {
+    console.log(savedMessage);
+    refs.texteria.value = savedMessage;
+  }
+}
+
+texteria.addEventListener('input', onInputMessage);
 
 form.addEventListener('submit', onFormSubmit);
