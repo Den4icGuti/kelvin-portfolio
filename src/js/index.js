@@ -1,4 +1,8 @@
-import { throttle, debounce } from 'throttle-debounce';
+import throttle from 'lodash.throttle';
+import { resetField } from './service';
+import '../css/main.css';
+import '../css/media.css';
+
 const refs = {
   burgerOpenMenu: document.querySelector('.js-burger'),
   navMenu: document.querySelector('.js-nav'),
@@ -6,14 +10,17 @@ const refs = {
   openForm: document.querySelector('.js-message'),
   formGroup: document.querySelector('.js-form-group'),
   form: document.querySelector('.js-form'),
-  texteria: document.querySelector('.js-texteria'),
+  input: document.querySelector('.js-form input'),
+  textarea: document.querySelector('.js-form textarea'),
 };
 
-// const data = [];
-populateMessage();
+const STORAGE_KEY = 'fdb-form';
 
-const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, form, texteria } = refs;
+const { burgerOpenMenu, navMenu, closeMenu, openForm, formGroup, textarea, form, input } = refs;
 
+saveData();
+
+console.log(input, textarea);
 const onOpenBurgerMenu = () => {
   navMenu.classList.add('open-menu');
 };
@@ -51,28 +58,49 @@ function onPressEscape(e) {
   }
 }
 
+function onInputForm() {
+  let data = {
+    email: input.value,
+    textarea: textarea.value,
+  };
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
 function onFormSubmit(e) {
   e.preventDefault();
 
-  form.reset();
-  localStorage.removeItem('fdb-message');
+  const email = e.currentTarget.elements.email.value;
+
+  const inputMessage = textarea.value;
+
+  if (email === '') {
+    alert('The mail field must be filled in!');
+    return;
+  }
+
+  const currentData = {
+    email: email,
+    textarea: inputMessage,
+  };
+
+  console.log(currentData);
+
+  localStorage.removeItem(STORAGE_KEY);
+  resetField();
 }
 
-function onInputMessage(evt) {
-  const message = evt.currentTarget.value;
+function saveData() {
+  const currentData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  localStorage.setItem('fdb-message', message);
-}
-
-function populateMessage() {
-  const savedMessage = localStorage.getItem('fdb-message');
-
-  if (savedMessage) {
-    console.log(savedMessage);
-    refs.texteria.value = savedMessage;
+  if (currentData) {
+    input.value = currentData.email;
+    textarea.value = currentData.textarea;
   }
 }
 
-texteria.addEventListener('input', onInputMessage);
+form.addEventListener('input', throttle(onInputForm, 1000));
 
 form.addEventListener('submit', onFormSubmit);
+
+formGroup.addEventListener('click', onBackdropClick);

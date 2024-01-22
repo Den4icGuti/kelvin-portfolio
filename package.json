@@ -24,7 +24,7 @@
     "posthtml-include": "^1.7.4"
   },
   "dependencies": {
-    "notiflix": "^3.2.7",
-    "throttle-debounce": "^5.0.0"
+    "lodash.throttle": "^4.1.1",
+    "notiflix": "^3.2.7"
   }
 }
