@@ -1,8 +1,3 @@
-import throttle from 'lodash.throttle';
-import { resetField } from './service';
-import '../css/main.css';
-import '../css/media.css';
-
 const refs = {
   burgerOpenMenu: document.querySelector('.js-burger'),
   navMenu: document.querySelector('.js-nav'),
@@ -87,7 +82,7 @@ function onFormSubmit(e) {
   console.log(currentData);
 
   localStorage.removeItem(STORAGE_KEY);
-  resetField(e);
+  form.reset();
 }
 
 function saveData() {
