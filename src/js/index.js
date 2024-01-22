@@ -94,7 +94,7 @@ function saveData() {
   }
 }
 
-form.addEventListener('input', throttle(onInputForm, 1000));
+form.addEventListener('input', onInputForm);
 
 form.addEventListener('submit', onFormSubmit);
 
