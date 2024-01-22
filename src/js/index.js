@@ -87,7 +87,7 @@ function onFormSubmit(e) {
   console.log(currentData);
 
   localStorage.removeItem(STORAGE_KEY);
-  resetField();
+  resetField(e);
 }
 
 function saveData() {
